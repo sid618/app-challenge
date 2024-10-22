@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComHub - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Welcome to ComHub!</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/get_started">Get Started</a></li>
+        <li><a href="/tracking">Tracking</a></li>
+        <li><a href="/sign_in">Sign In</a></li>
+        <li><a href="/fundraising">Fundraising</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="search">
+    <h2>Find Organizations</h2>
+    <form action="/search" method="GET">
+      <input type="text" name="keywords" placeholder="Enter keywords (e.g. education, health)" required>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <section id="leaderboard">
+    <h2>Top Volunteers</h2>
+    <ol>
+      {% for volunteer in leaderboard %}
+        <li>{{ volunteer.name }}: {{ volunteer.hours }} hours</li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section id="events">
+    <h2>Local Events Near Me</h2>
+    <ul>
+      {% for event in events %}
+        <li>{{ event.name }} - {{ event.date }} at {{ event.location }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <footer>
+    <p>ComHub - Connecting you with local organizations</p>
+  </footer>
+</body>
+</html>

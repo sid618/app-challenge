@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComHub - Fundraising</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Support a Cause</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/get_started">Get Started</a></li>
+        <li><a href="/tracking">Tracking</a></li>
+        <li><a href="/sign_in">Sign In</a></li>
+        <li><a href="/fundraising">Fundraising</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="fundraising_list">
+    <h2>Current Fundraising Campaigns</h2>
+    <ul>
+      {% for campaign in campaigns %}
+        <li>{{ campaign.name }}: Raised ${{ campaign.amount }} of ${{ campaign.goal }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <footer>
+    <p>ComHub - Support a cause today</p>
+  </footer>
+</body>
+</html>

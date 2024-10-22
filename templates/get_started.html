@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComHub - Get Started</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Get Started with ComHub</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/get_started">Get Started</a></li>
+        <li><a href="/tracking">Tracking</a></li>
+        <li><a href="/sign_in">Sign In</a></li>
+        <li><a href="/fundraising">Fundraising</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="options">
+    <h2>How do you want to get involved?</h2>
+
+    <div class="section">
+      <h3>For Students</h3>
+      <p>Create an account and start tracking your volunteer hours!</p>
+      <a href="/sign_up_student">Create Student Account</a>
+    </div>
+
+    <div class="section">
+      <h3>For Organizations</h3>
+      <p>Post your volunteer opportunities and connect with students.</p>
+      <a href="/sign_up_organization">Create Organization Account</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>ComHub - Connecting you with local organizations</p>
+  </footer>
+</body>
+</html>
