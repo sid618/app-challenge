@@ -3,34 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ComHub - Fundraising</title>
+  <title>ComHub - Tracking</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <header>
-    <h1>Support a Cause</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/get_started">Get Started</a></li>
-        <li><a href="/tracking">Tracking</a></li>
-        <li><a href="/sign_in">Sign In</a></li>
-        <li><a href="/fundraising">Fundraising</a></li>
-      </ul>
-    </nav>
+    <h1>Volunteer Tracking</h1>
+    <div class="header-links">
+      <a href="/">Home</a>
+      <a href="/get_started">Get Started</a>
+      <a href="/tracking">Tracking</a>
+      <a href="/sign_in">Sign In</a>
+      <a href="/fundraising">Fundraising</a>
+    </div>
   </header>
 
-  <section id="fundraising_list">
-    <h2>Current Fundraising Campaigns</h2>
-    <ul>
-      {% for campaign in campaigns %}
-        <li>{{ campaign.name }}: Raised ${{ campaign.amount }} of ${{ campaign.goal }}</li>
-      {% endfor %}
-    </ul>
+  <section id="tracking_section">
+    <h2>Your Volunteer Hours</h2>
+    <!-- Add tracking content here -->
   </section>
 
   <footer>
-    <p>ComHub - Support a cause today</p>
+    <p>ComHub - Keep track of your impact</p>
   </footer>
 </body>
 </html>

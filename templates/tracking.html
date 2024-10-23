@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Tracking</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to ComHub!</h1>
+        <div class="header-links">
+          <a href="/">Home</a>
+          <a href="/get_started">Get Started</a>
+          <a href="/tracking">Tracking</a>
+          <a href="/sign_in">Sign In</a>
+          <a href="/fundraising">Fundraising</a>
+        </div>
+      </header>
+
+    <section id="log-hours">
+        <h2>Log Your Hours</h2>
+        <form action="#" method="POST">
+            <label for="event">Event Name:</label>
+            <input type="text" id="event" name="event" required><br>
+            <label for="hours">Hours Volunteered:</label>
+            <input type="number" id="hours" name="hours" required><br>
+            <button type="submit">Log Hours</button>
+        </form>
+    </section>
+
+    <section id="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            {% for event in user_events %}
+            <li>{{ event['name'] }} - {{ event['date'] }} at {{ event['location'] }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
